@@ -1,0 +1,333 @@
+package me.forgoten_rule.MobCounter;
+
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+
+
+
+
+public class Main extends JavaPlugin {
+		
+	@Override
+	public void onEnable() {
+		new Zombies(this);
+		new Pigman(this);
+		new Magmacube(this);
+		new Guardians(this);
+		new Endermites(this);
+		new SilverFish(this);
+		new Cavespider(this);
+		new Witch(this);
+		new EnderMan(this);
+		new Slime(this);
+		new Ghast(this);
+		new Spider(this);
+		new Skeleton(this);
+		new Creepers(this);
+		new PlayerKills(this);
+		new playerdeath(this);
+		new Bat(this);
+		new Pig(this);
+		new Sheep(this);
+		new Cow(this);
+		new Chicken(this);
+		new Wolf(this);
+		new MushroomCow(this);
+		new Ocelot(this);
+		new Horse(this);
+		new Rabbit(this);
+		new Villager(this);
+		new Blaze(this);
+        }
+
+	@Override
+	public void onDisable() {
+		saveConfig();
+	}
+
+    
+    
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		
+		FileConfiguration config = this.getConfig();
+		if (cmd.getName().equalsIgnoreCase("zombiekills") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			int total = config.getInt("zombiekills." + player.getName().toLowerCase());
+			
+			player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Zombies" + ChatColor.GOLD +" have been killed by you!");
+			
+			return true;
+			
+		}
+	
+		if (cmd.getName().equalsIgnoreCase("playerkills") && sender instanceof Player) {
+			
+			Player player = (Player) sender;
+			
+			int total = config.getInt("playerkills." + player.getName().toLowerCase());
+			
+			player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.BLUE + "Players" + ChatColor.GOLD +" have been killed by you!");
+			
+			return true;
+			
+		}	
+	if (cmd.getName().equalsIgnoreCase("creeperkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("creeperkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Creepers" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("skeletonkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("skeletonkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Skeletons" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("blazekills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("blazekills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Blaze" + ChatColor.GOLD +" have been killed by you	!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("spiderkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("spiderkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "spiders" + ChatColor.GOLD +" have been killed by you	!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("pigmankills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("pigmankills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Pigmans" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("slimekills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("slimekills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Slime" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("ghastkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("ghastkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Ghast" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}
+	if (cmd.getName().equalsIgnoreCase("endermankills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("endermankills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Enderman" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("cavespiderskills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("cavespiderkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Cavespidrs" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("MagmaCubekills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("magmacubekills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "MagmaCube" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("witchkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("witchkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Witch" + ChatColor.GOLD +" have been killed by you!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("endermitekills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("endermitekills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Endermite" + ChatColor.GOLD +" have been killed by yous!");
+		
+		return true;
+	}if (cmd.getName().equalsIgnoreCase("guardianskills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("guardiankills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Guardian" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("silverfishkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("silverkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Silverfish" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("batkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("batkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("pigkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("pigkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("sheepkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("sheepkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("cowkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("cowkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("Chickenkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("chickenskills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("squidkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("squidkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("wolfkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("wolfkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("MushroomCowkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("MushroomCowkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("oceltonkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("ocelotkills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("horsekills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("horsekills." + player.getName().toLowerCase());
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("rabbitkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("rabbitkills." + player.getName().toLowerCase());
+		
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	if (cmd.getName().equalsIgnoreCase("villagerkills") && sender instanceof Player) {
+		Player player = (Player) sender;
+		
+		int total = config.getInt("villagerkills." + player.getName().toLowerCase());
+		
+		
+		player.sendMessage(ChatColor.GOLD + "" + total + ChatColor.RED + "Bat" + ChatColor.GOLD +" have been killed by you!");
+	}
+	
+	
+	
+		if (cmd.getName().equalsIgnoreCase("scoreboard") && sender instanceof Player) {
+			
+			Player player = (Player)sender;
+			
+			//Player kills
+			int kills = config.getInt("playerkills." + player.getName().toLowerCase());
+			int death = config.getInt("playerdeaths." + player.getName().toLowerCase());
+			double kd = kills;
+			
+			if (death > 0){
+				kd = (double)kills/death;
+			}
+
+			
+			player.sendMessage(ChatColor.RED + "~~~Personal ScoreBoard~~~");
+			player.sendMessage(ChatColor.GOLD + "Zombies killed: " + config.getInt("zombiekills." + player.getName().toLowerCase()));
+			player.sendMessage(ChatColor.GOLD + "Players killed: " + kills	);
+			player.sendMessage(ChatColor.GOLD + "Deaths:" + death);
+			player.sendMessage(ChatColor.GOLD + "Creeper killed: " + config.getInt("creeperkills." + player.getName().toLowerCase()));
+			player.sendMessage(ChatColor.GOLD + "Skeleton killed: " + config.getInt("skeletonkills." + player.getName().toLowerCase()));
+			player.sendMessage((ChatColor.GOLD + "Blaze Killed: " + config.getInt("blazekills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "Spider Killed: " + config.getInt("spiderkills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "PigZombie Killed: " + config.getInt("pigmankills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "Ghast Killed: " + config.getInt("ghastkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "CaveSpider Killed: " + config.getInt("cavespiderkills." + player.getName().toLowerCase())));		
+			player.sendMessage((ChatColor.GOLD + "SilverFish Killed: " + config.getInt("silverfishkills." + player.getName().toLowerCase())));		
+			player.sendMessage((ChatColor.GOLD + "Magmacubes Killed: " + config.getInt("magmacubekills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "Witchs Killed: " + config.getInt("witchkills." + player.getName().toLowerCase())));		
+			player.sendMessage((ChatColor.GOLD + "Endermites Killed: " + config.getInt("endermitekills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "Guardians Killed: " + config.getInt("guardiankills.." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Endermans Killed: " + config.getInt("endermankills." + player.getName().toLowerCase())));		
+			player.sendMessage((ChatColor.GOLD + "Slimes Killed: " + config.getInt("slimekills." + player.getName().toLowerCase())));
+			player.sendMessage((ChatColor.GOLD + "Bats Killed: " + config.getInt("batkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Pigs Killed: " + config.getInt("pigkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Chickens Killed: " + config.getInt("chickenskills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Squids Killed: " + config.getInt("squidkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Wolfs Killed: " + config.getInt("wolfkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "MushroomCow Killed: " + config.getInt("MushroomCowKills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Oceltons Killed: " + config.getInt("ocelotkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Horses Killed: " + config.getInt("horsekills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Rabbits Killed: " + config.getInt("rabbitkills." + player.getName().toLowerCase())));	
+			player.sendMessage((ChatColor.GOLD + "Villagers Killed: " + config.getInt("villagerkills." + player.getName().toLowerCase())));	
+			player.sendMessage(ChatColor.GOLD + "K/D Rate: " + kd);
+			player.sendMessage(ChatColor.RED + "~~~Personal ScoreBoard~~~");
+		}
+		return true;
+}
+}
+	
